@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-primary {
+            background-color: #e72f2f;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #2980b9;
+}
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+
+    <h1>Polymorphism</h1>
+    <p>Polymorphism means many forms and it occurs when we have many classes 
+        that are related to each other by inheritance
+        ,inthat the same method is defined in different ways</p>
+    <p>there are two types of polymorphism in java </p>
+    <ol>
+        <li>Compile time
+            <ul>
+                <li>Operator overloading</li>
+                <li>Method Overloading</li>
+            </ul>
+        </li>
+        <li>Runtime
+            <ul>
+                <li>Method overriding</li>
+            </ul>
+        </li>
+    </ol>
+    <h2>Method overriding</h2>
+    <p>method overriding is a form of polymorphism which occurs in inherritance where a subclass
+        provides a particular implementation of a method declared by its parent as in it overides
+         the method implementation in the parent class
+        and if the method is called the one in the subclass will be the one executed as shown below</p>
+    <div>
+        <pre><code class="language-java">{{ code30 }}</code></pre>
+    </div>
+    <p>if the print method was not overriden in the sub class the method in the super class would be the one executed, you can try 
+        and comment the method in the sub class to prove this
+    </p>
+    <b><i>next we will look at method overloading</i></b><a href="{% url 'overloading' %}"><button class = "button button-primary">Next</button> </a> 
+
+    {% endblock %}
+
+</body>
+</html>

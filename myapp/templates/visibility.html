@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Visibility Modifiers</h1>
+    <p>Visibility Modifiers show the level of accessibility of a class and its properties by other classes ,they are 
+        very important in herritane </p>
+    <p>We have four levels of visibilities and we use words to show this visibility</p>
+    <ol>
+        <li>public</li>
+        <li>protected</li>
+        <li>default</li>
+        <li>private</li>
+    </ol>
+    <p>In the table below yes means that it is accessible in that context and No means that it not accessible in that context</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Visibility Modifier</th>
+                <th>Accessible in that class</th>
+                <th>Accessible in another class in the same package</th>
+                <th>Accessible in the sub class</th>
+                <th>Accessible in another package</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>public</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>yes</td>
+            </tr>
+            <tr>
+                <td>protected</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td>private</td>
+                <td>yes</td>
+                <td>No</td>
+                <td>No</td>
+                <td>No</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Below is an example that shows the usage of visibility Modifiers</p>
+    <div>
+        <pre><code class = "language-java">{{ code9 }}</code></pre>
+    </div>
+    <p>So lets understand the example above ,weight automatically becomes default even without the default key word because 
+        any property without an access Modifier is default automatically</p>
+    <p>name is accessible in the sub class because it is <b>public</b> and so accessible every where </p>
+    <p>age is accessible because it is called in the sub class of the class it was defined in and protected
+         properties are accessible in the class it is defined, its subclasses and other classes in the same package </p>
+    
+    <p>weight is accessible because both the classes are in the same package</p>
+    <p>contact is not accessible beacuse it is private ,private properties are only accessible in the class they were defined in, they are important 
+        in terms of security because here a class can hide important features
+    </p>
+    <P><b>NOTE :</b> Access Modifiers are not only used on variables they are also used on methods and classes, but in terms of classes 
+    only public and final are used </P>
+    <p>when a class is public it implies that it can be inherrited and if a class is final it cannot be extended or inherrited</p>
+    <div class="navigation">
+        <a href="{% url 'objects' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'constructors' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+
+    {% endblock %}
+
+</body>
+</html>

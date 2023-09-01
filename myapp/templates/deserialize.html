@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Object Deserialization</h1>
+    <p>is the reverse process where the byte stream is used to recreate the actual java object in memory</p>
+    <p>The following example is deserializating the example demostrated in the serialization chapter</p>
+    <div>
+        <pre><code class="language-java">{{ code55 }}</code></pre>
+    </div>
+    <div class="navigation">
+      <a href="{% url 'serialize' %}" class="nav-link previous">&larr; Previous</a>
+    </div>
+  
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Object Casting</h1>
+    <p>Objects of a class can be cast into objects of another class if both classes are related to each other through
+         the property of inheritance</p>
+    <p>There are two types of object casting 
+        <ol>
+            <li>Upcasting</li>
+            <li>Downcasting</li>
+        </ol>
+    </p>
+    <h4>upcasting/implicit:</h4>
+    <p>this refers to the process of converting an object of a subclass to an object of its superclass, 
+        it is safe and automatic</p>
+    <p>Example: </p>
+    <div>
+        <pre><code class="language-java">{{ code48 }}</code></pre>
+    </div>
+    <p><b>Note:</b>In upcasting the object can access only fields accessed in the super class and 
+        methods unless when the method is overridden in the sub class.
+        but it cant access fields only defined in the sub class. in that Any additional fields or methods that 
+        are specific to the subclass are not directly accessible using an upcasted reference.
+
+        However, if a method is overridden in the subclass, then when you call that method using an upcasted 
+        reference, the overridden method in the subclass will be executed, not the method from the superclass.
+        
+        </p>
+    <h4>Downcasting/Explicit </h4>
+    <p>it refers to the process of converting an object of a superclass to an object of its subclass,
+        down casting requires explicit 
+        casting and it is not always safe.</p>
+    <p><b>Syntax</b></p>
+    <div>
+        <pre><code class="language-java">{{ code49 }}</code></pre>
+    </div>
+    <p><b>Note:</b>in downcasting the object can access all the methods and fields in both the super class and the 
+        sub class and for methods if it is overridden in the sub class it will print the
+         one in the subclass</p>
+    <div class="navigation">
+        <a href="{% url 'clone' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'inner' %}" class="nav-link next">Next &rarr;</a>
+    </div>
+        
+
+    {% endblock %}
+
+</body>
+</html>

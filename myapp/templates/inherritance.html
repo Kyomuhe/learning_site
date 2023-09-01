@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); 
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Inherritence</h1>
+    <p>This is a concept used in object oriented programming languages where it allows you to
+        create a new class(sub class) that inherits the properties and methods except the private 
+        ones of another class(super class) </p>
+    <p>The extends key word is used to declare inheritance between classes.Inheritance
+        allows you to create a hierarchical relationship between classes, promoting code reusability and organization</p>
+    <p>When a class inherrits the properties of another class it can overide them and define them
+        differently</p>
+    <p>in the example below it is shown that the sub classes can access
+        the properties and methods of the super class</p>
+    <div>
+        <pre><code class="language-java">{{ code28 }}</code></pre>
+    </div>
+    <div class="navigation">
+        <a href="{% url 'program' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'input' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

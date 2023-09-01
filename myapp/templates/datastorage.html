@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Data Storage</h1>
+    <p>So lets talk about how we store data  in java,we store our values in <b>variables</b> , 
+        there are two types of variables that is :</p>
+    <ol>
+        <li>Local variables  :these are defined and known only within the local scope in which they are defined usually within braces { },
+             you will understand this better in the coming chapters</li>
+        <li>Global variables :  these can be accessed from any where in the class and such variables are used to 
+            represent the properties or attributes of the class</li>
+    </ol>
+    <p><b>int x = 10;</b></p>
+    <p>in the above example x is a variable of type int meaning it stores integers and it is assigned a value 10</p>
+    <p>in the example below regNo, age and name are global variables and marks is a local variable</p>
+    <div>
+        <pre><code class="language-java">{{ code4 }}</code></pre>
+    </div>
+    <h3>Static Members</h3>
+    <p>Static members also called class members are members of a class whose values belongs to a class and not the individual object 
+        of a class
+    </p>
+    <p>static members have a word "static " after the visibility Modifier</p>
+    <p>Static means that the value belongs to all objects and when the value is changed it affects all objects</p>
+    <p><b>Note: </b> class members can be accessed either through the class name or without the classname, if a member is 
+    static you can access it only inside a static context(inside a static method)</p>
+    <p><b>static String name</b></p>
+    <h3>Constants</h3>
+    <p>Constants are also like variables and are used to store diffrent kinds of data , but the only difference is when a value is assigned to it it can never be changed, 
+        constants are defined with the final keyword as shown below  </p>
+    <p><b>final int x = 10</b></p>
+    <div class="navigation">
+        <a href="{% url 'datatypes' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'classes' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+
+</body>
+</html>

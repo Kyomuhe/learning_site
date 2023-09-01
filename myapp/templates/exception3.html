@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <p>Now lets try to undestand <b>throw</b> and <b>throws</b> in exception handling</p>
+    <p>The throws keyword is used to declare which exceptions can be thrown from a method, while the 
+        throw keyword is used to explicitly throw an exception within a method or block of code.
+    <p>The throws keyword is used in a method signature and declares which exceptions can be thrown from a method.
+        On the other hand, the throw keyword is used within a method body, or any block of code, and is 
+        used to explicitly throw a single exception.</p>
+    <p><b>Note:</b> Only checked exceptions are required to be thrown using the throws keyword. Unchecked exceptions
+         don’t need to be thrown or handled explicitly in code.
+         Both checked and unchecked exceptions can be thrown using the throw keyword.
+    </p>
+    <h2>User defined exceptions</h2>
+    <p>These are exceptions which which are defined and handled by the programmer</p>
+    <h5>Example</h5>
+    <div>
+        <pre><code class = "language-java">{{ code36 }}</code></pre>
+    </div>
+    <p>So lets understand the example above</p>
+    <div class="navigation">
+        <a href="{% url 'exception2' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'immutability' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

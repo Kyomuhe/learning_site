@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+        }
+        /* Add these styles to your CSS */
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-primary {
+            background-color: #e72f2f;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #2980b9;
+}
+
+      </style>
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Flow Control</h1>
+    <p>lets take our discussion further to program flow statements, here we will be looking at loops and if-conditions, these
+        statements helps you to controll how code is executed</p>
+    <h2>Loops</h2>
+    <p>there are three types of loops in java namely</p>
+    <ul>
+        <li>While loop</li>
+        <li>do While loop</li>
+        <li>For loop</li>
+    </ul>
+    <h3>While loop</h3>
+    <p>here the condition is first tested to see weather it is satisfied before the while block is
+        executed</p>
+    <div>
+        <pre><code class = "language-java">{{ code20 }}</code></pre>
+    </div>
+    <p>in example above as long as x is less
+        or equal to 10 its value will be printed and then one will be added to the current value(
+        this is done by x++ which can also be in the form x=x+1)</p>
+    <h4>Nested loops</h4>
+    <p>this is a loop within a loop</p>
+    <p>example 2 demostrates a loop within a loop.</p>
+    <div>
+        <pre><code class = "language-java">{{ code21 }}</code></pre>
+    </div>
+    <h3>do while</h3>
+    <p>in a do while loop the loop executes atleast once even if the condition is false
+        at the begining because it first executes then check the condition</p>
+    <h5>Syntax</h5>
+    <div>
+        <pre><code class = "language-java">{{ code22 }}</code></pre>
+    </div>
+    <p>A simple example to demonstrate the usage of do while loop</p>
+    <div>
+        <pre><code class = "language-java">{{ code23 }}</code></pre>
+    </div>
+    <p>in the first example its simple printing values from 1 to 10
+        and in the second number it is testing if a value is odd or even and prints the results accordingly</p>
+
+    <b><i>next we will look at the for loops</i></b><a href="{% url 'forl' %}"><button class = "button button-primary">Next</button> </a> 
+
+
+    {% endblock %}
+
+</body>
+</html>

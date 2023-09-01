@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('/static/backg.PNG'); /* Adjust the path as needed */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+}
+
+        .center-text {
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+}
+
+        .button-primary {
+            background-color: #e4194c;
+            color: white;
+}
+
+        .button-primary:hover {
+            background-color: #2980b9;
+}
+
+    </style>
+</head>
+<body>
+    <div class="center-text">
+        <h1>Welcome to Java with Kay</h1>
+        <p>Every line of code is made even more simpler</p>
+        <button type="button" class="button button-primary" onclick="goToHomePage()">Start learning</button>
+
+    </div>
+    <script>
+        function goToHomePage() {
+            window.location.href = "{% url 'main' %}";
+        }
+    </script>
+
+
+</body>
+</html>

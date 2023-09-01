@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-primary {
+            background-color: #e72f2f;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #2980b9;
+}
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>for loop</h1>
+    <p><b>Syntax</b></p>
+    <div>
+        <pre><code class = "language-java">{{ code24 }}</code></pre>
+    </div>
+    <ul>
+        <li>st1 :initialisation of variable to control the loop</li>
+        <li>st2 :condition to be satisified for before the code in the block is executed</li>
+        <li>st3 :changes the value of the variable which controls the loop</li>
+    </ul>
+    <p>the following is a simple example to demostrate the usage of a forloop</p>
+    <div>
+        <pre><code class = "language-java">{{ code25 }}</code></pre>
+    </div>
+    <p>in the above example we declare the variable i and then initialise
+        it to 0 in the for loop ,every time it executes it checks
+        to see if the condition set is satisified ,values 1 to 10 are printed because when the value of i becomes 11,
+         the condition is tested and since 11 is not less or equal to 10 the condition will be false hence termination of
+          the loop,
+    </p>
+    <p>the following demostrates the usage of nested loops</p>
+    <div>
+        <pre><code class = "language-java">{{ code26 }}</code></pre>
+    </div>
+    <p>the following example is demonstrating the usage of nested loops(a loop within another loop)the second
+        loop only executes if the condition of the first loop is met</p>
+
+    <b><i>next we will look at if else conditions</i></b><a href="{% url 'ife' %}"><button class = "button button-primary">Next</button> </a> 
+
+    
+    {% endblock %}
+
+</body>
+</html>

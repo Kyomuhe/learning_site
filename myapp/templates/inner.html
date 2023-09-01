@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); 
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Inner classes</h1>
+    <p>An inner class is a class that is defined within another class. It's a way to encapsulate and group related
+         classes together, allowing them to have a more closely connected relationship. Inner classes have access to
+          the members (fields and methods) of the outer class(classes in which they are defined), including private members,
+         which makes them useful for implementing certain design patterns and achieving better code organization.</p>
+    <p>There are several types of inner classes in Java:</p>
+    <ol>
+        <li>Member Inner Class/Non static inner class: This is the most common type of inner class. It's defined within the body of an outer 
+            class and has access to all members of the outer class, including private members.
+             It can also have its own members</li>
+        <div>
+            <pre><code class="language-java">{{ code50 }}</code></pre>
+        </div>
+        <p><b>Note:</b> we can not have a static method in a nested inner class because an inner class is implicitly 
+            associated with an an object of its outer class so it
+             cannot define any static method for itself</p>
+        <li>Static Nested Class: This type of inner class is defined as a static member of the outer class. 
+            It doesn't have access to instance members of the outer class directly, but it can access static members 
+            of the outer class.
+        </li>
+        <div>
+            <pre><code class="language-java">{{ code51 }}</code></pre>
+        </div>
+        <li>Local Inner Class: This type of inner class is defined within a method or a scope block. 
+            It has limited visibility and is only accessible within that scope. It can access the local variables of
+             the enclosing scope if they are effectively final.</li>
+        <div>
+            <pre><code class="language-java">{{ code52 }}</code></pre>
+        </div>
+        <li>Anonymous Inner Class: These are essentially unnamed classes that are defined inline while creating an 
+            instance of an interface or an abstract class. They are commonly used in scenarios where you need to provide
+             implementations for a small piece of functionality.</li>
+        <p>they start with a curly brace on the creation of an object and end with a semi clone on the closing brace</p>
+        <div>
+            <pre><code class="language-java">{{ code53 }}</code></pre>
+        </div>
+    </ol>
+    <div class="navigation">
+        <a href="{% url 'casting' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'serialize' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

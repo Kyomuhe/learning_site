@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Abstraction</h1>
+    <p>Abstraction is the process of hiding certain details and showing 
+        only essential information to the user. Abstract classes help implement Abstraction</p>
+    <p>An Abstract class is a class which is incomplete and has a keyword abstract between the visibility modifier
+        and the keyword class e.g <b>public abstract class A{ }</b></p>
+    <p>Since an abstract class is incomplete it cant be instantiated, if a class A is an abstract this statement 
+        <b>A obj = new A();</b>
+        will bring an error because abstract classes can not have objects</p>
+    <p><b>Note:</b> A class which is not abstract is concrete</p>
+    <p>For a class to be abstract it must satisfy the following </p>
+    <ul>
+        <li>it must be defined with the keyword abstract</li>
+        <li>if a class contains an abstract method i.e when a method has no body e.g <b>public abstract void myMethod();</b></li>
+        <li>if a class extends an abstract class but doesnot define the abstract methods of the super class</li>
+        <li>if a class implements an interface but does not define all the abstract methods of that
+            interface, it automatically becomes abstract</li>
+    </ul>
+    <p><b>Note: </b>A class can override a concret method of a super class and make it abstract
+        ,this can be done if the subclass finds the super class definition invalid in its body</p>
+    <p><b>Note:</b> Much s an abstract class cant be instatiated ,it can be used as a data
+        type for an array of objects such an array of objects can never be initialised e.g if A is abstract then <b>A[] arr = new A[5];</b> is correct but
+        <b>arr[0] = new A();</b> is not allowed</p>
+    <p>in the example below class Animals is abstract with an abstract method eat, it is extended by two classes
+        Lion and Goat which define the abstract method eat making them concrete i.e not abstract and so being able to create objects with out
+        causing any error</p>
+
+    <div>
+        <pre><code class ="language-java">{{ code32 }}</code></pre>
+    </div>
+    <div class="navigation">
+        <a href="{% url 'polymorphism' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'interfaces' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

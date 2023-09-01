@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); 
+  
+  
+  
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-primary {
+            background-color: #e72f2f;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #2980b9;
+}
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Exception Handling</h1>
+    <p>An exception (or exceptional event) is a problem that arises during the execution of a program. 
+        When an Exception occurs the normal flow of the program is interupted and the program terminates 
+        , therefore, these exceptions must be handled.
+
+    </p>
+    <p>An exception can occur for many different reasons. Following are some scenarios where an exception occurs.</p>
+    <ul>
+        <li>A user has entered an invalid data</li>
+        <li>A file that needs to be opened cannot be found</li>
+        <li>A network connection has been lost in the middle of communications or the JVM has run out of memory.</li>
+    </ul>
+    <h2>Checked Exception</h2>
+    <p>A checked exception is an exception that is checked by the compiler at compilation-time,
+         these are also known as compile time exceptions. 
+        These exceptions cannot simply be ignored, the programmer should take care of them before running the program.</p>
+    <h2>Unchecked Exception</h2>
+    <p>unchecked exception is an exception that occurs at the time of execution. 
+        These are also called as Runtime Exceptions. These include programming bugs, such as logic 
+        errors or improper use of an API. 
+        Runtime exceptions are ignored at the time of compilation</p>
+    <p>For example, if you have declared an array of size 5 in your program, and trying to call the 6th element of the array then an
+         ArrayIndexOutOfBoundsExceptionexception occurs.</p>
+    <h5>Example</h5>
+    <div>
+        <pre><code class = "language-java">{{ code33 }}</code></pre>
+    </div>
+    <p>Output:
+        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException, this is because the index that is trying to
+        be accessed doesnot exist
+        </p>
+    <h2>Errors</h2>
+    <p>These are not exceptions at all, but problems that arise beyond the control of the user or the programmer. 
+        Errors are typically ignored in your code because you can rarely do anything about an error.
+         For example, if a stack overflow occurs, an error will aris</p>
+
+    <b><i>lets continue with exceptions</i></b><a href="{% url 'exception2' %}"><button class = "button button-primary">Next</button> </a> 
+
+
+
+
+
+
+
+    {% endblock %}
+
+
+</body>
+</html>

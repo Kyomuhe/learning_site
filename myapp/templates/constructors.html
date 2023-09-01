@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Constructor</h1>
+    <p>Constructors are methods in java that are used to initialise properties on the creation of objects,
+         constructors prevent the direct 
+        assigning of values to properties which takes more lines of code</p>
+    <h5>syntax</h5>
+    <p>Constructors must have the same name as the class</p>
+    <p>they are special methods because they donot have the return type, they only have the visibility Modifier which is always 
+        public followed by the class name
+    </p>
+    <p>it takes in the declared properties of the class, and on creation of the objects values of these properties can be passed 
+        in there order
+    </p>
+    <div>
+        <pre><code class = "language-java">{{ code10 }}</code></pre>
+    </div>
+    <p>In the example above a constructor is created in a class called Student and they have the same name, the declared properties are passed in the constructor
+        and <b>this</b> key word is used to define the properties in that when values are passed on the creation of objects they are assigned directly to those exact variables
+
+    </p>
+    <p>And you can access the variables through the objects as shown above</p>
+    <div class="navigation">
+        <a href="{% url 'visibility' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'arrays' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

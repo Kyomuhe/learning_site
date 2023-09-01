@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Dynamic Binding</h1>
+    <p>Dynamic binding, also known as late binding, is a concept in object-oriented programming 
+         where the determination of which method to invoke is made at runtime, based on the actual type of the object
+          being referenced, rather than at compile time. This enables more flexible and polymorphic behavior, allowing 
+          different classes to be used interchangeably through inheritance and polymorphism.
+
+    </p>
+    <p>It is demonstrated by method overriding</p>
+    <div>
+        <pre><code class="language-java">{{ code43 }}</code></pre>
+    </div>
+    <p>Out put: 
+        <pre>
+            animals eat both flesh and plants depending on the animal
+            it eats flesh
+            it eats plants
+        </pre>
+    </p>
+    <p>In this example, we have a base class Animal with a method eat(). Two subclasses, Lion and Sheep, override the
+         eat() method with their own implementations. In the Main method, we create instances of both Lion and Sheep 
+         and assign them to a variable of type Animal.
+         When we call the eat() method on these objects, the appropriate version of the method is invoked 
+         based on the actual type of the object being referred to at runtime. This is dynamic binding in action, 
+         as the decision about which method to call is made dynamically based on the runtime type of the object.
+        
+        
+        
+        
+        
+        </p>
+        <div class="navigation">
+            <a href="{% url 'chaining' %}" class="nav-link previous">&larr; Previous</a>
+            <a href="{% url 'generic' %}" class="nav-link next">Next &rarr;</a>
+          </div>
+        
+    {% endblock %}
+
+</body>
+</html>

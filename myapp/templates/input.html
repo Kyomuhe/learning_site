@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Input</h1>
+    <p>Here the scanner class is used to allow users provide input </p>
+    <p><b>Important points to note</b></p>
+    <ul>
+        <li>Scanner class must be imported</li>
+        <li>To use the Scanner class, create an object of the class</li>
+        <li>they are different types of inputs and they are handled differently by different methpds as shown below,</li>
+    </ul>
+    <h3>Method Description</h3>
+    <table border="1">
+        <thead>
+            <th>Method</th>
+            <th>Description</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>nextBoolean()</td>
+                <td>Reads a boolean value from the user</td>
+            </tr>
+            <tr>
+                <td>nextByte()</td>
+                <td>Reads a byte value from the user </td>
+            </tr>
+            <tr>
+                <td>nextDouble()</td>
+                <td>Reads a double value from the user </td>
+            </tr>
+            <tr>
+                <td>nextFloat()</td>
+                <td>Reads a float value from the user</td>
+            </tr>
+            <tr>
+                <td>nextInt()</td>
+                <td>Reads a int value from the user</td>
+            </tr>
+            <tr>
+                <td>nextLine()</td>
+                <td>Reads a String value from the user</td>
+            </tr>
+            <tr>
+                <td>nextLong()</td>
+                <td>Reads a long value from the user</td>
+            </tr>
+            <tr>
+                <td>nextShort()</td>
+                <td>Reads a short value from the user</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Example</h3>
+    <div>
+        <pre><code class = "language-java">{{ code29 }}</code></pre>
+    </div>
+    <p>When the example above is run, the statement in the print method will be printed and will prompt you to enter a 
+        value and since the first input is using the nextLine() method you have to enter a string and then press enter,again an input prompt will apear for you to enter another value
+     and since nextInt() is used you will have to enter an integer value after press enter again and finally the last print statement
+    will be displayed with the captured information you typed, this is because all the information you typed are stored in
+     variables as shown above that is age and userName
+</p>
+    <div class="navigation">
+        <a href="{% url 'inherritance' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'polymorphism' %}" class="nav-link next">Next &rarr;</a>
+    </div>
+
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Objects</h1>
+    <p>An object is an instance of a class or blue print of a class</p>
+    <p>To understand the concept of objects take an instance of Students being a class ,so objects of students include specific
+        students like precious john henry and so on. so if name is declared to be a property in a class, all objects created in this class can define different names specific to them.
+    </p>
+    <h5>Syntax of objects</h5>
+    <p>To create an object you start by the class name followed by the object name equals to <b>new</b> key word,
+         then the class name again</p>
+    <p>Creation of objects happens in the main method</p>
+    <p>in the example below two objects student1 and student2 are created and each defines 
+        its own name and age, objects can access properties by using the object name dot the property name</p>
+    <div>
+        <pre><code class = "language-java">{{ code8 }}</code></pre>
+    </div>
+    <div class="navigation">
+        <a href="{% url 'classes' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'visibility' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+
+
+
+</body>
+
+</html>

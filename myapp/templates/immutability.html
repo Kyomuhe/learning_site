@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Immutable Objects</h1>
+    <p>Immutable objects are objects that cannot be changed, classes that are used to create immutable objects are 
+        called immutable classes,forexample string is an immutable class and once instantiated the value of the string 
+        object never changes.
+        </p>
+    <p>They are final in nature
+    </p>
+    <p><b>important Points to note about immutability: </b></p>
+    <ul>
+        <li>Make the methods final and static</li>
+        <li>make the class final</li>
+        <li>All data fields must be final private</li>
+        <li>Initialise all fields using a constructor</li>
+        <li>immutable objects should not have getters and setters because these might cause privacy leakage</li>
+    </ul>
+    <p><b>Privacy leakage </b> is where a getter method leaks the privacy of a class to another class through inherritance</p>
+    <p>There are two types of immutability that is <ol>
+        <li>Strong Immutability : this is when the class is made final there for inherritance is imposible</li>
+        <li>Weak Immutability : this is when the class is not final and so can be extended hence increasing chances of overriding and changing properties and methods</li>
+    </ol></p>
+    <p>Below is an example demostrating immutability</p>
+    <div>
+        <pre><code class="language-java">{{ code37 }}</code></pre>
+    </div>
+    <p>in the example above the class is final and so inherritance is not possible hence strong immutability,the properties are 
+        also final meaning they cannot be changed and private there for cannot be accessed by other classes which can redefine them.
+    </p>
+    <p><b>Note:</b> you cannot change instances of an immutable class but rather u can return a new object that reflects
+         the change.Immutable objects cannot be reused, just use and throw</p>
+    <div class="navigation">
+        <a href="{% url 'exception' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'interning' %}" class="nav-link next">Next &rarr;</a>
+    </div>
+        
+    {% endblock %}
+
+</body>
+</html>

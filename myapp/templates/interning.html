@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Object Interning</h1>
+    <p>Its main aim is to store in the same memory location.</p>
+    <p>String interning is nothing but storing one copy of the distinct values, this is used to make string 
+        process more time and space efficient</p>
+    <p>There are two ways to create and assign values to strings as shown below</p>
+    <div>
+        <pre><code class="language-java">{{ code38 }}</code></pre>
+    </div>
+    <p><b>Note:</b>string constant pool is a collection of strings that are shared among multiple parts of the program when
+         a string is created using string literals while heap memory is an area of memory where all objects 
+         including strings are stored, strings that are created using the new keyword or by modifying an existing
+         string are always stored in the heap rather than in the string constant pool .</p>
+    <p>The method intern() creates an exact copy of the string object in the heap memory and stores it in the
+         string constant pool</p>
+    <p><b>Note:</b> if another string with the same contents exists in the string constant pool then anew object
+         will not be created and 
+        the new reference will point to the other string provided the intern() method is used on both the strings</p>
+    <p>lets understand the concept more through an example</p>
+    <div>
+        <pre><code class="language-java">{{ code39 }}</code></pre>
+    </div>
+    <p><b>points to note:</b><ul>
+        <li>A string literal always invokes the intern() method weather one mentions it or not</li>
+        <li>whenever we create a string object using the new keyword ,two objects are created</li>
+    </ul></p>
+    <p>so in the example above all the strings defined have been assigned the same value, the method equals() checks wheather the values
+        of different variables are the same
+    </p>
+    <p>double equals (==) checks if the value is stored in the same location, remember strings created with the new key word
+        keep creating new objects even though there are arleady objects with the same value hence wasting time and space
+        ,so with the intern() method it makes sure that if the value arleady exists all the new objects with this value will
+        reference the same value instead of repeating the same value.
+    </p>
+    <p>As shown above str and str1 use the intern method and sinec they have the same value ,they will both reference the same value
+        and when (==) is used on these variables it returns true since the value is in the same location,str3 is a string literal
+        and by default it invokes the intern method that's why it also returns true when compared to str and str1
+    </p>
+    <p>str2 doesnot invoke the intern() method that means a new object is created and so returns false when compared 
+        to the rest using (==) but returns true when equals() method is used because the value is the same even thou they are 
+        not in the same location
+    </p>
+    <div class="navigation">
+        <a href="{% url 'immutability' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'chaining' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

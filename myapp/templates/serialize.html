@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Serialization</h1>
+    <p>Serialisation in java is the process of converting the java code object into a byte stream to transfer the object 
+        code from one jvm to another and recreate it using the process of deserialization</p>
+    <p><b>Note: </b>to serialize an object means to convert its state to a byte stream so that the byte stream can be
+         reverted back into
+         a copy of the object</p>
+    <p>To serialize an object, the parent class should satisfy the following </p>
+    <ul><li>the class should implement the serializable interface</li>
+        <li>the class should have a no argument constructor</li>
+    </ul>
+    <div>
+        <pre><code class="language-java">{{ code54 }}</code></pre>
+    </div>
+    <p>Remember that Serialization is the process of converting an object's state into a byte stream, which can then
+         be saved to a file or transmitted over a network.</p>
+    <p>So lets the example above, The Student class is defined, and it implements the Serializable interface. This interface
+         marks the class as serializable, allowing its objects to be converted to bytes for serialization.</p>
+    <p>Two constructors are defined: one with parameters to initialize the instance variables and another default 
+        constructor with no parameters</p>
+    <p>The objectSerialization method is defined within the Student class. This method takes a Student object as a
+         parameter and performs the serialization process:
+        <ul>
+            <li>It creates a FileOutputStream to write bytes to a file named "student.ser".</li>
+            <li>It creates an ObjectOutputStream to handle the serialization of objects into the byte stream.</li>
+            <li>It uses the writeObject method of ObjectOutputStream to write the stu object to the byte stream.</li>
+            <li>The method then closes the output streams and prints a message indicating that the serialization is complete.</li>
+        </ul></p>
+    <p>In the main method, an instance of the Student class named stu is created and initialized with student information</p>
+    <p>The objectSerialization method is called on the stu object to serialize it and save it to the "student.ser" file.</p>
+    <div class="navigation">
+        <a href="{% url 'inner' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'deserialize' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+
+</body>
+</html>

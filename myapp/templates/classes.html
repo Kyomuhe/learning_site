@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Classes</h1>
+    <p>classes are templates used to define properties and behaviours ,they act as enclosures that store methods and properties
+        . A class can have multiple objects .</p>
+    <p>When declaring a class it must be defined with the key word <b>class</b> in lower case, the class name must start with a capital letter
+    then followed by curly braces and every thing inside the curly braces is part of the class</p>
+    <div>
+        <pre><code class="language-java">{{ code5 }}</code></pre>
+    </div>
+    <p>The entry point of every class is the main method, in that that if a class is run in the complier it starts from the main method
+        and so every class must have a main method as shown below
+    </p>
+    <div>
+        <pre><code class="language-java">{{ code6 }}</code></pre>
+    </div>
+    <p>A class can have variables with their values and they can be printed using the print method as shown below</p>
+    <div>
+        <pre><code class="language-java">{{ code7 }}</code></pre>
+    </div>
+    <div class="navigation">
+        <a href="{% url 'datastorage' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'objects' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+
+    <h1>Data types in java</h1>
+    <ol>There are two categories of data types in java
+        <li>Primitive data types</li>
+        <li>Non Primitive data types</li>
+    </ol>
+    <p>Primitive data types are data types that are inbuilt in to the programming languange development environment , examples include
+    </p>
+    <ul><li>int -> Integers</li>
+    <li>double ->Floating point values</li>
+    <li>float-> Floating point values</li>
+    <li>String-> text values</li>
+    <li>byte -> whole numbers</li>
+    <li>char -> single characters</li>
+    </ul>
+    <p>Non primitive data types are not defined in the programming languange 
+        ,they are defined by the user of the language for example classes, Arrays, and Interfaces </p>
+
+    <p>important point to note: all statements in java must end 
+        with a semi clone(;)other wise you will encounter a compile time error </p>
+    <div class="navigation">
+        <a href="{% url 'main' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'datastorage' %}" class="nav-link next">Next &rarr;</a>
+    </div>
+        
+    {% endblock %}
+
+</body>
+</html>

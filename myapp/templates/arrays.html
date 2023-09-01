@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Arrays</h1>
+    <p>Arrays are used to store multiple values ina single
+        variable instead of declaring separate variables for each value</p>
+    <p>The syntax of declaring an array is the data type followed by square bravkets
+        then the name of the array as shown below</p>
+    <div>
+        <pre><code class = "language-java">{{ code11 }}</code></pre>
+    </div>
+    <p>To access elements of an array we use there indexes, the first element in an array is at
+        position 0 so to access it we use </p>
+    <div>
+        <pre><code class = "language-java">{{ code12 }}</code></pre>
+    </div>
+    <p>To change the value of a specific element you also refer to its position and assign it a new value
+    </p>
+    <div>
+        <pre><code class = "language-java">{{ code13 }}</code></pre>
+    </div>
+    <p>To find the length of an array(number of values the array has)use the length property</p>
+    <div>
+        <pre><code class = "language-java">{{ code14 }}</code></pre>
+    </div>
+    <p>Instead of printing one value of the array at a time you can loop throuh the array and print all the
+        values with less lines of code </p>
+    <div>
+        <pre><code class = "language-java">{{ code15 }}</code></pre>
+    </div>
+    
+    <h1>Multi dimensional Arrays</h1>
+    <p>multidimensional array is an array of arrays</p>
+    <p>To create a two dimensional array, add each array within its own set of curly braces as shown below</p>
+    <div>
+        <pre><code class = "language-java">{{ code16 }}</code></pre>
+    </div>
+    <p>To access elements of numbers we specify two indexes one for the array and one
+        for the element inside that array,in the example below it acceses the 2nd element in the second array</p>
+    <div>
+        <pre><code class = "language-java">{{ code17 }}</code></pre>
+    </div>
+    <p>To change a value of an array you also use indexes to access the value
+        you want to change then assign it the new value</p>
+    <div>
+        <pre><code class = "language-java">{{ code18 }}</code></pre>
+    </div>
+    <h5>Printing all values of a multidimensional array</h5>
+    <p>we can use a for loop inside another for loop to get the elements
+        of the array as shown in the example below</p>
+
+    <div>
+        <pre><code class = "language-java">{{ code19 }}</code></pre>
+    </div>
+    
+    <div class="navigation">
+        <a href="{% url 'constructors' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'program' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    {% endblock %}
+
+</body>
+</html>

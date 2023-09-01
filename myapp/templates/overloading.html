@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Method Overloading</h1>
+    <p>Method overloading allows a class to have more than one method with the same name but
+        different method signature(different number of paramaters and return type)</p>
+    <p>Instead of defining two methods that should do the same thing, it is better to overload one.</p>
+    <p>in the example below the method add has been overloaded, when integers are passed when calling the method, the complier looks through the code 
+        from the beginning until a method that takes in integers is found ,now this will be the method that will be executed
+    </p>
+    <p>this same process will be repeated if doubles are passed</p>
+    <div>
+        <pre><code class = "language-java">{{ code31 }}</code></pre>
+    </div>
+    <div class="navigation">
+        <a href="{% url 'polymorphism' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'abstraction' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

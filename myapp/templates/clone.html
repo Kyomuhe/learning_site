@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Object Clonning</h1>
+    <p>Is a way of creating an exact copy of an object</p>
+    <p>In Java, object cloning refers to the process of creating a duplicate or copy of an existing object.
+         This allows you to create a new object with the same state as the original object,
+          but typically independent of it. </p>
+    <p>The clone() method is used to achieve object cloning in Java.</p>
+    <p>Here is how clonning works
+        <ul>
+            <li>Implement the Cloneable Interface: In order to enable cloning for a class, 
+                the class needs to implement the Cloneable interface. 
+                This interface acts as a marker interface, indicating that instances of the class can be cloned</li>
+            <li>Override the clone() Method: Once the class implements the Cloneable interface, 
+                it needs to override the clone() method from the Object class. 
+                This method is responsible for creating a copy of the object</li>
+            <li>Shallow Copy: By default, the clone() method creates a shallow copy of the object.
+                 This means that the fields of the object are copied, but if those fields themselves are 
+                 reference types, only the references
+                 to the objects they point to are copied, not the objects themselves</li>
+            <li>Deep Copy: If you want to create a deep copy of the object, where not 
+                only the fields but also the referenced objects are copied, you need to implement custom 
+                logic within the clone() method to achieve this</li>
+        </ul>
+    </p>
+    <div>
+        <pre><code class="language-java">{{ code44 }}</code></pre>
+    </div>
+    <p>In this example, the Student class implements the Cloneable interface and overrides the clone() method to provide a shallow copy. When the clone() method is called on an instance of Student, a new object is created with the same field values. Note that the cloned object is a separate instance, as demonstrated by the comparison at the end of the example.
+
+
+
+
+    </p>
+    <div class="navigation">
+        <a href="{% url 'generic' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'casting' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

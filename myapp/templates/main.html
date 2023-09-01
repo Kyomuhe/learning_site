@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java with kay</title>
+    <!-- Include your CSS and other meta tags here -->
+    <style>
+      body{
+        background-image: url('/static/light.jpeg'); 
+      }
+      .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+      .button-primary {
+        background-color: #e4194c;
+        color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #2980b9;
+}
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+    </style>
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <a href="{% url 'index' %}"><button class="button button-primary">Home page</button> </a> 
+
+    <h1>INTRODUCTION TO JAVA</h1>
+    <p>Object oriented programming(OOPS) is an approach to programming that breaks a programming
+    problem in to objects that interact with each other, java is an object oriented programming language
+    other oops languages include python</p>
+    
+    <p>Java is a popular general-purpose programming language that was created
+    in the mid-1990s. It was developed by a team of engineers at Sun Microsystems,
+    led by James Gosling, along with Mike Sheridan and Patrick Naughton.
+    The initial version of Java, known as Java 1.0, was released to the public in 1996.</p>
+ 
+    <p>Java is a platform independent language meaning once you write a java program
+    you can run it on any operating system such as windows,mac or linux as long as
+    it has the jvm(java virtue machine)This approach has revolutionized software development
+    by enabling developers to build applications that could be deployed on a wide range of
+    devices and platforms.Most programming languages like C and C++ compile written code in machine
+    code directly so this runs on a specific platform but java works differently ,instead of compiling
+    in machine code directly, java converts all code in to byte code first, byte code is platform independent
+    i.e there is no difference between byte code for window and on mac</p>
+ 
+    <p>the jvm is the one that converts byte code to machine code. the advantage of using this
+  two step process is that it allows java code to be run on all platforms as long as they have the jvm</p>
+  <div class="navigation">
+    <a href="{% url 'datatypes' %}" class="nav-link next">Next &rarr;</a>
+  </div>
+  
+ 
+    {% endblock %}
+    
+    
+
+</body>
+</html>

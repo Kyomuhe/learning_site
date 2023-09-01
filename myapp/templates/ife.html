@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>IF ELSE </h1>
+    <p>This works differently from loops because it handles both the true and false
+        results ,in that if the condition is tested to be true the set statements are executed in the if block
+        and if false the else block is executed</p>
+    <p>We can also have multiple conditions using elseif</p>
+    <div>
+        <pre><code class = "language-java">{{ code27 }}</code></pre>
+    </div>
+    <p>So lets understand the above examples, in the first example age is assigned a value 20 and a condition is set that if the age is 
+        greater or equal to 18 the statement in the block will be executed else the statement in the else block will be executed.
+    </p>
+    <P>and since 20 is greater than 18 the statement in the if block will be the one executed</P>
+    <p>The else block is only checked when the if block is false</p>
+    <p>In the second example the only difference is that a range is defined</p>
+    <div class="navigation">
+        <a href="{% url 'forl' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'inherritance' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button-primary {
+            background-color: #e72f2f;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background-color: #2980b9;
+}
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <P><b>Note:</b> All exception classes are subtypes of the java.lang.Exception class. The exception class is a
+        subclass of the Throwable class. Other than the exception class there is another subclass called Error which
+         is derived from the Throwable class.</P>
+    <p>The Exception class has two main subclasses: IOException class and RuntimeException Class.</P>
+    <p>To handle exceptions we use <b>try and catch</b></p>
+    <P>The code which is prone to exceptions is placed in the try block. When an exception occurs, 
+        that exception is handled by the catch block associated with it. 
+        Every try block should be immediately followed either by a catch block or finally block.</P>
+    <div>
+        <pre><code class = "language-java">{{ code34 }}</code></pre>
+    </div>
+    <h5>Example</h5>
+    <div>
+        <pre><code class = "language-java">{{ code35 }}</code></pre>
+    </div>
+    <p>So lets understand the example above, an array with two elements is defined </p>
+    <p>we try to access the third element which does not exist so this statement will cause an error and the program will stop there,
+        but we dont want this to happen right, so we place this code which is likely to cause an exception in the try block in that when it causes an exception ,this exception will be caught in the catch
+        block and printed as shown above ,so by handling this exception the program will not crash even thou there is an exception but rather
+        it will continue to excute until the program is finished
+    </p>
+    <p>The finally block will always be executed no matter what</p>
+    <P><b>Note:</b>Since Java 7, you can handle more than one exception using a single catch block, this feature simplifies the code</P>
+    <b><i>lets continue with exceptions</i></b><a href="{% url 'exception3' %}"><button class = "button button-primary">Next</button> </a> 
+
+
+    {% endblock %}
+
+</body>
+</html>

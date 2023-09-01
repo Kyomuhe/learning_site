@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Constructor Chaining</h1>
+    <p>In object oriented programming, constructor chaining is the technique of creating an instance of a class with multiple constructors, 
+        then using one constructor to call another. The primary purpose of chaining is to make a program simpler, with fewer repeated lines of code</p>
+    <p>In simple terms Constructor chaining is the process of calling a constructor from another constructor with respect to current object</p>
+    <p>Constructor chaining can be done in two ways as shown below:<ol>
+        <li>Within the same class. It can be done using this() keyword to for constructors in the same class</li>
+        <li>through inheritance , by using super() keyword to call the constructor from the base class </li>
+    </ol></p>
+    <p><b>Why we need constructor chaining :</b></p>
+    <p>This process is used when we want to perform multiple tasks in a single constructor rather 
+        than creating a code for each task in a single constructor we create a separate constructor
+         for each task and make their chain which makes program more readable</p>
+    <p>An example to demonstrating constructor chaining in the same class using the this() keyword    </p>
+    <div>
+        <pre><code class="language-java">{{ code40 }}</code></pre>
+    </div>
+    <p>the out put of the above example is : 
+        <pre>
+        75
+        5
+        this is the default constructor</pre>
+        </p>
+    <p>So lets understand the example above, first of all you should note that the this() statement should be the first line 
+        of code in the constructor, we have three constructors, one that takes in nothing, one that takes in one integer
+        and one that takes in two integers
+    </p>
+    <p>instead of calling each constructor separately we use constructor chaining, in that we call one which calls the next and the next calls the next and so on until they are finished
+
+    </p>
+    <p>so how do we achieve this ,by creating an object in the main method and not passing any argument, this calls the constructor with no argument but in this
+        constructor there is <b>this(5)</b>, this then first calls the constructor which takes in one integer but 
+        on reaching that constructor, there is<b>this(5,15)</b> so this statement calls the constructor which takes in two
+        integers and on reaching that constructor since there is no this() statement, it executes the code in that constructor and goes back to
+        the previous and does the same until it reaches the first constructor that was called
+    </p>
+    <p><b>Note :</b>There should be at least one constructor without the this() keyword other wise the program will be in an indefinite loop</p>
+    <p>An example to demonstrating constructor chaining in inherritance using the super() keyword    </p>
+    <div>
+        <pre><code class="language-java">{{ code41 }}</code></pre>
+    </div>
+    <p>Output:
+        <pre>
+            iam from parent
+            20
+        </pre>
+    </p>
+    <p>In the example above on creation of the object by default super() is invoked even thou the statement is not there so before
+        any of the childs constructor is invoked parents constructor is invoked, and then since an argument is passed in the object
+        the constructor which takes in an argument is the one which is executed ,thats why the statement <b>iam from child</b>
+        is not printed
+    </p>
+    <p>Another example: </p>
+
+    <div>
+        <pre><code class="language-java">{{ code42 }}</code></pre>
+    </div>
+    <p>Output:
+        <pre>
+            paramaterised constructor from the base class
+            paramaterised constructor of baby class precious
+
+        </pre>
+    </p>
+    <div class="navigation">
+        <a href="{% url 'interning' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'binding' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    {% endblock %}
+
+</body>
+</html>

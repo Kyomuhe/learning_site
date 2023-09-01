@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java with kay</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>INTERFACES</h1>
+    <P>Interface is a class like construct that is used to represent abstraction of a class, it has no constructor
+        .Syntax is as shown below</P>
+    <div class="code-container">
+        <pre><code class="language-java">{{ java_code }}</code></pre>
+    </div>
+    <p>Note: before java 8, methods in an interface were supposed to be public abstract
+        e.g public abstract void m(); however from java 8 on wards methods in an interface can be static(and defined with a body), can
+        be private (and defined with a body) and can be default (with the key word default before
+        the return type)</p>
+    <p>Unlike classes that have a single root(the object class)interfaces in java donot have a single root and there for 
+        Multiple inherritance is allowed in interfaces</p>
+
+    <div class="code">
+        <pre><code class="language-java">{{ kay }}</code></pre>
+    </div>
+    <p>in the example above interface Z is able to extend X and Y since multiple herritance is allowed</p>
+    <ul>points to note about interfaces:
+        <li>by default methods in interfaces are public abstract</li>
+        <li>constants are by default public static final</li>
+        <div class="code1.0">
+            <pre><code class="language-java">{{ mey }}</code></pre>
+        </div>
+        <li>We can define methods inside an interface</li>
+        <div class="code2.0">
+            <pre><code class="language-java">{{ hey }}</code></pre>
+        </div>
+        <li>The interface should be implemented by a class, we use the keyword <b>implements</b> between the class
+            and interface  e.g <p>public class A implements X{}</p></li>
+        <li>When a class implements an interface, it must define all the abstract methods in the interface other wise it becomes abstract</li>
+        <li>A class can implement more than one interace at the same time and in such a case it must define
+            all their methods</li>
+            <div class="code3.0">
+                <pre><code class="language-java">{{ code3 }}</code></pre>
+            </div>
+        <li>if a class implements an interface and thereby overriding the interface's method, it should not lower the visibility of those methods</li>
+        <li>when a class implements two or more interfaces with constants of the same name but dufferent values
+            they must be called using the interface name to avoid confusion</li>
+    
+    </ul>
+    <div class="navigation">
+        <a href="{% url 'abstraction' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'exception' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+    
+
+    {% endblock %}
+
+</body>
+</html>
+

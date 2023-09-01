@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA WITH KAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/themes/prism.css" rel="stylesheet" />
+    <!-- Include the Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/prism.js"></script>
+    <!-- Include the Prism Java language plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-java.min.js"></script>
+    <style>
+        body{
+          background-image: url('/static/light.jpeg'); /* Adjust the path as needed */
+  
+  
+  
+        }
+        .navigation {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 20px 0;
+}
+
+        .nav-link {
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          text-decoration: none;
+          color: #333;
+          background-color: #f0f0f0;
+}
+
+
+      </style>
+  
+
+
+</head>
+<body>
+    {% extends 'sidemenu.html' %}
+
+    {% block side_menu_content %}
+    <h1>Generic Programming</h1>
+    <p>The java generics allow us to create  single class, interface and method that 
+        can be used with different types of data. This helps us reuse our code.</p>
+    <p>A class that can be used with different data types is known as a <b>Generic class</b></p>
+    <p><b>Note: </b>generics doesnot work with primitive types(int, float, char etc)</p>
+    <p>Below is an example of a generic class</p>
+    <div>
+        <pre><code class="language-java">{{ code45 }}</code></pre>
+    </div>
+    <p>So lets understand the example above</p>
+    <p>public class GenericClass &lt;T&gt;: This line declares a generic class named GenericClass. The type parameter 
+        T is a placeholder for the actual type that will be used when 
+        creating an instance of this class</p>
+    <p>public T data;: This line declares a public field named data of type T, which will hold the data of the 
+        specified type</p>
+    <p>public GenericClass(T data): This is the constructor of the GenericClass class. It takes a parameter of type 
+        T and assigns it to the data field. This constructor allows you to initialize the data field when creating an
+         instance of the class.
+    </p>
+    <p>GenericClass  &lt;Integer&gt; n = new GenericClass  &lt;Integer&gt;(4);: This line creates an instance of GenericClass where the type parameter T is explicitly set to Integer. The constructor is called with the value 4, which is assigned to the data field.
+        GenericClass  &lt;String&gt; g = new GenericClass  &lt;String&gt("hry");: Similarly, this line creates another instance of GenericClass, but this time the type parameter is set to String. The constructor is called with the value "hry"</p>
+    <h3>Java Generics Method</h3>
+    <p>Similar to the generics class, we can also create a method that can be used with any type of data. Such a class is known as Generics Method.
+        Here is some example to use generic methods
+        </p>
+    <div>
+        <pre><code class="language-java">{{ code46 }}</code></pre>
+    </div>
+    <p>output is:
+        <pre>
+             1 2 3 4 5 6 7 8 9 10 
+             1.0 2.0 3.0 4.0 
+             precious kay kyomuhendo
+
+        </pre>
+    </p>
+    <p>the above example demostrates a method that is used to handle different data types</p>
+    <p>displayArray(T[] array): This is a generic method named displayArray. It takes an array of any type T as a parameter and prints each element of the array.
+
+    </p>
+
+    <p>another example to demostrate generic methods</p>
+    <div>
+        <pre><code class="language-java">{{ code47 }}</code></pre>
+    </div>
+    <div class="navigation">
+        <a href="{% url 'binding' %}" class="nav-link previous">&larr; Previous</a>
+        <a href="{% url 'clone' %}" class="nav-link next">Next &rarr;</a>
+      </div>
+    
+
+    {% endblock %}
+
+</body>
+</html>
