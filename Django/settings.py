@@ -72,24 +72,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Django.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-#DATABASES = {
-    #'default': {
-        #'ENGINE': 'django.db.backends.mysql',
-        #'NAME':'djangoApp',
-        #'USER':'root',
-        #'PASSWORD':'',
-        #'HOST':'localhost',
-        #'PORT':'3306',
-    #}
-#}
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -118,17 +100,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-#STATIC_ROOT = 'C:/Users/HP/Desktop/Django/static'
-
-#STATIC_URL = 'static/'
-# settings.py
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

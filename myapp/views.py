@@ -4,27 +4,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 
-def campus_map(request):
-    context = {
-        'google_maps_api_key': settings.GOOGLE_MAPS_API_KEY
-    }
-    return render(request, 'campus_map.html', context)
-
-"""def index(request):
-    template = loader.get_template('index.html')
-    #getting our template
-    return HttpResponse(template.render())
-    # rendering the template in HttpResponse
-"""
-
-"""def index(request):
-     index = Employee.objects.all().values
-     template = loader.get_template('index.html')
-     context = {
-          'index': index,
-     }
-     return HttpResponse(template.render(context, request))
-"""
 def index (request):
     return render(request, 'index.html')
 def main (request):
